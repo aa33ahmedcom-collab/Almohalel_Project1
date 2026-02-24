@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> analyze() async {
     final response = await http.get(Uri.parse(
-        "http://YOUR_IP:8000/predict?home_id=${homeController.text}&away_id=${awayController.text}"));
+        "http://192.168.0.1:8000/predict?home_id=${homeController.text}&away_id=${awayController.text}"));
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
